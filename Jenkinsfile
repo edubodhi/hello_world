@@ -7,4 +7,9 @@ node{
 					sh "${mvnHome}/bin/mvn package"
 						
 					}
+		stage ('Deploy') {
+					def mvnHome1 =  tool name: 'M2_HOME', type: 'maven'
+					sh "${mvnHome1}/bin/mvn deploy
+						
+					}
 				}

@@ -1,26 +1,22 @@
 pipeline{
 	agent any
 		stages {
-			stage ('compile stage') {
+			stage ('build') {
 				steps {
 					
-						sh 'mvn clean compile'
+						echo 'Building the application'
 						
 					}
 				}
 	
-			stage ('testing stage') {
+			stage ('test') {
 				steps {
-					withMaven(maven : 'M2_HOME') {
-						sh 'mvn test'
-						}
+					echo "Testing the application'
 					}
 				}
-			stage ('deploy stage') {
+			stage ('deploy') {
 				steps {
-					withMaven(maven : 'M2_HOME') {
-						sh 'mvn deploy'
-						}
+					echo 'Deploying the application'
 					}
 				}
 			}

@@ -3,9 +3,9 @@ pipeline{
 		stages {
 			stage ('compile stage') {
 				steps {
-					withMaven(maven : 'M2_HOME') {
+					
 						sh 'mvn clean compile'
-						}
+						
 					}
 				}
 	

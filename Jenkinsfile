@@ -1,6 +1,7 @@
-pipeline{
-	agent any
-		stages {
+node{
+	stage('SCM Checkout'){
+		git 'https://github.com/edubodhi/hello_world.git'
+	}
 			stage ('build') {
 				steps {
 					echo 'Building the application'
@@ -25,5 +26,4 @@ pipeline{
 					echo 'Deploying the application'
 					}
 				}
-			}
-		}
+}

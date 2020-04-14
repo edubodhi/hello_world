@@ -9,7 +9,8 @@ pipeline{
 				}
 		stage ('package') {
 				steps {
-					sh 'mvn package'
+					def mvnHome= tool name: 'M2_HOME', type: 'maven'
+					sh "${mvnHome}/bin/mvn package"
 						
 					}
 				}

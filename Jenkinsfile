@@ -9,7 +9,7 @@ node{
 					}
 		stage ('Deploy') {
 					def mvnHome1 =  tool name: 'M2_HOME', type: 'maven'
-					sh "${mvnHome1}/bin/mvn deploy
+					sh "${mvnHome1}/bin/mvn deploy"
 						
 					}
 				}

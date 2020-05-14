@@ -12,4 +12,9 @@ node{
 					sh "${mvnHome1}/bin/mvn install"
 						
 					}
+	        stage ('docker -push') {
+					docker.withRegistry('https://registary.hub.docker.com', 'docker-hub)
+				        def imagepush = docker.build('prahi001/webapp')
+				            imagepush.push()
+							    }
 				}
